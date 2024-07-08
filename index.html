@@ -1,14 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User Information Form</title>
-    <link rel="stylesheet" href="./css/styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
     <form enctype="multipart/form-data" action="index.html" method="get">
-        <!-- FORM FIELDS HERE -->
+      <form>
+        <fieldset>
+          <legend>Personal Information</legend>
+          <!-- Name -->
+          <div>
+            <label for="name">Name:</label>
+            <br />
+            <input type="text" id="name" name="name" value="" />
+          </div>
+          <!-- Email -->
+          <div>
+            <label for="email">Email:</label>
+            <br />
+            <input
+              type="email"
+              id="email"
+              pattern=".+@example\.com"
+              size="30"
+            />
+          </div>
+          <!-- Password -->
+          <div>
+            <label for="password">Password:</label>
+            <br />
+            <input
+              type="password"
+              id="password"
+              name="password"
+              minlength="12"
+            />
+          </div>
+          <!-- Date of Birth -->
+          <div>
+            <label for="birthDay">Date of Birth:</label>
+            <br />
+            <input
+              type="birthDay"
+              id="birthDay"
+              name="birthDay"
+              value="yyyy-mm-dd"
+              min="2024-07-08"
+            />
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Preferences</legend>
+          <!-- Favorite Color -->
+          <div>
+            <label for="favoriteColor">Favorite Color:</label>
+            <br />
+            <input
+              type="color"
+              id="favoriteColor"
+              name="favoriteColor"
+              value=""
+            />
+          </div>
+          <!-- Hobby -->
+          <div>
+            <label for="hobby">Hobby:</label>
+            <input id="hobby" name="hobby" list="hobbies" />
+            <datalist id="hobbies">
+              <option value="Drawing"></option>
+              <option value="Swimming"></option>
+              <option value="Mail"></option>
+            </datalist>
+          </div>
+          <!-- Experience Level -->
+          <div>
+            <label for="experienceLevel">Experience Level:</label>
+            <br />
+            <input
+              type="range"
+              id="experienceLevel"
+              name="experienceLevel"
+              min="0"
+              max="100"
+            />
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Contract Preferences</legend>
+          <!-- Preferred Contract Method -->
+          <div>
+            <label for="preferredContractMethod">
+              Preferred Contract Method:
+            </label>
+            <br />
+            <select name="preferredContractMethod" id="preferredContractMethod">
+              <option value="email">Email</option>
+              <option value="phone">Phone</option>
+              <option value="mail">Mail</option>
+            </select>
+          </div>
+          <!-- Subscribe to Newsletter -->
+          <div>
+            <label for="subscribeToNewsletter">
+              Subscribe to Newsletter:
+            </label>
+            <br />
+            <input
+              type="checkbox"
+              id="subscribeToNewsletter"
+              name="subscribeToNewsletter"
+            />
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Preferences</legend>
+          <!-- Gender -->
+          <div>
+            <label for="gender">Gender:</label>
+            <br />
+            <div>
+              <input type="radio" name="gender" id="male" value="male" />
+              <label for="male">Male</label>
+            </div>
+            <div>
+              <input type="radio" name="gender" id="female" value="female" />
+              <label for="female">Female</label>
+            </div>
+            <div>
+              <input type="radio" name="gender" id="other" value="other" />
+              <label for="other">Other</label>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>More Information</legend>
+          <!-- Bio -->
+          <div>
+            <label for="bio">Bio:</label>
+            <br />
+            <textarea id="bio" name="bio" rows="4" cols="50"></textarea>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Upload Documents</legend>
+          <!-- Resume and other certificates -->
+          <div>
+            <label for="certificates">Resume and other certificates:</label>
+            <br />
+            <input
+              type="file"
+              id="certificates"
+              name="certificates"
+              accept="application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/pdf, image/jpeg, image/png"
+            />
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Submission</legend>
+          <div>
+            <input type="reset" value="Reset" />
+            <input type="submit" value="Submit" />
+          </div>
+        </fieldset>
+      </form>
     </form>
-</body>
+  </body>
 </html>
